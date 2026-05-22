@@ -8,6 +8,10 @@ import urllib.request
 
 app = Flask(__name__)
 
+FET_URL = ""
+FET_DIR = "/tmp/fet"
+FET_BIN = "/tmp/fet/fet-cl"
+
 def descargar_fet():
     if os.path.exists(FET_BIN):
         return True
