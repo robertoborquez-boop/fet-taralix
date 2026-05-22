@@ -2,6 +2,6 @@ services:
   - type: web
     name: fet-taralix
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: apt-get install -y fet && pip install -r requirements.txt
     startCommand: gunicorn app:app
     plan: free
