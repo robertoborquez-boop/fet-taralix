@@ -8,9 +8,18 @@ import urllib.request
 
 app = Flask(__name__)
 
-FET_URL = ""
-FET_DIR = ""
-FET_BIN = "fet-cl"
+def descargar_fet():
+    if os.path.exists(FET_BIN):
+        return True
+    try:
+        os.makedirs(FET_DIR, exist_ok=True)
+        url = "https://github.com/fet-project/fet/releases/download/v7.8.0/fet-cl-linux64"
+        urllib.request.urlretrieve(url, FET_BIN)
+        os.chmod(FET_BIN, 0o755)
+        return os.path.exists(FET_BIN)
+    except Exception as e:
+        print(f"Error descargando FET: {e}")
+        return False
 
 def descargar_fet():
     if os.path.exists(FET_BIN):
