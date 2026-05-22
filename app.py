@@ -8,9 +8,9 @@ import urllib.request
 
 app = Flask(__name__)
 
-FET_URL = "https://github.com/karandit/fet/releases/download/fet-6.18.0/fet-6.18.0-qt5.15.2-linux64.tar.bz2"
-FET_DIR = "/tmp/fet"
-FET_BIN = "/tmp/fet/fet-cl"
+FET_URL = ""
+FET_DIR = ""
+FET_BIN = "fet-cl"
 
 def descargar_fet():
     if os.path.exists(FET_BIN):
